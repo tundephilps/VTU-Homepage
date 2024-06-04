@@ -9,19 +9,19 @@ const sidebarData = [
 
   {
     title: "Products",
-    path: "/Dashboard/products",
+    path: "/products",
     icon: <FaBook />,
   },
 
   {
     title: "Home",
-    path: "/Dashboard/orders",
+    path: "/orders",
     icon: <FaCartArrowDown />,
   },
 
   {
     title: "Customers",
-    path: "/Dashboard/customers",
+    path: "/customers",
     icon: <FaUserPlus />,
   },
 ];

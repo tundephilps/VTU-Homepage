@@ -14,7 +14,7 @@ function Homepage() {
     <>
       <Navbar />
       <NavbarMobile />
-      <div className="relative -z-10 overflow-x-hidden">
+      <div className="">
         <Hero />
       </div>
       <div className="z-auto">

@@ -9,6 +9,7 @@ import Link1 from "../../../assets/Link1.png";
 import Link2 from "../../../assets/Link2.png";
 import Link3 from "../../../assets/Link3.png";
 import Signwith from "../../../assets/Signwith.png";
+import { Link } from "react-router-dom";
 
 const SignUpMobile = () => {
   return (
@@ -146,9 +147,11 @@ const SignUpMobile = () => {
               <div className="flex items-center justify-center mt-4">
                 <p className="text-white">
                   Already have an Account?{" "}
-                  <span className="text-blue-600 hover:underline hover:cursor-pointer">
-                    Sign In
-                  </span>
+                  <Link to="/Login">
+                    <span className="text-blue-600 hover:underline hover:cursor-pointer">
+                      Sign In
+                    </span>
+                  </Link>
                 </p>
               </div>
             </div>

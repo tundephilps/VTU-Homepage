@@ -1,24 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 
-import Logo from "../../../assets/logo.png";
-
-import google from "../../../assets/google.png";
-
-import apple from "../../../assets/apple.png";
-
-import faceboo from "../../../assets/faceboo.png";
+import Logo from "../../../../assets/logo.png";
 
 import { FaRegEyeSlash } from "react-icons/fa";
 import { RiKey2Line } from "react-icons/ri";
 import { FaRegUser } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
-const LoginDesktop = () => {
-  const [useEmail, setUseEmail] = useState(false);
-
-  const toggleMode = () => {
-    setUseEmail(!useEmail);
-  };
+const ChangePasswordDesktop = () => {
   return (
     <div>
       <main className="w-full flex">
@@ -79,86 +68,44 @@ const LoginDesktop = () => {
               />
               <div className="mt-5 space-y-2">
                 <h3 className="text-gray-800 text-2xl font-bold sm:text-3xl">
-                  Welcome Back
+                  Change Password
                 </h3>
-                <p className="">Best Price for Airtime and Data</p>
+                <p className="">Enter Your Email to get password reset link</p>
               </div>
             </div>
-            <div className="grid grid-cols-3 gap-x-3">
-              <button className="flex items-center justify-center py-2.5 border rounded-lg hover:bg-gray-50 duration-150 active:bg-gray-100">
-                <img src={google} className="h-6 w-6" />
-              </button>
-              <button className="flex items-center justify-center py-2.5 border rounded-lg hover:bg-gray-50 duration-150 active:bg-gray-100">
-                <img src={apple} className="h-6 w-6" />
-              </button>
-              <button className="flex items-center justify-center py-2.5 border rounded-lg hover:bg-gray-50 duration-150 active:bg-gray-100">
-                <img src={faceboo} className="h-6 w-6" />
-              </button>
-            </div>
-            <div className="relative">
-              <span className="block w-full h-px bg-gray-300"></span>
-              <p className="inline-block w-fit text-sm bg-white px-2 absolute -top-2 inset-x-0 mx-auto">
-                Or continue with
-              </p>
-            </div>
+
             <div className="mt-4 max-w-lg mx-auto">
               <form
                 onSubmit={(e) => e.preventDefault()}
                 className="space-y-6 text-gray-800 text-xs"
               >
-                <p
-                  className="hover:underline cursor-pointer"
-                  onClick={toggleMode}
-                >
-                  {useEmail
-                    ? "Login with Username instead..."
-                    : "Login with Email instead..."}
-                </p>
                 <div>
-                  {useEmail ? "Email" : "Username"}
+                  <label className="font-medium">Email</label>
                   <div className="relative">
                     <input
-                      type={useEmail ? "email" : "text"}
+                      type="Email"
+                      placeholder="Enter Email"
                       required
                       className="w-full pl-12 mt-2 px-3 py-4 text-gray-500 bg-transparent outline-none border focus:border-indigo-600 shadow-sm rounded-lg"
-                      placeholder={useEmail ? "Email" : "Username"}
                     />
                     <FaRegUser className="absolute top-[45%] left-[5%] z-50 text-[15px]" />
                   </div>
                 </div>
-                <div>
-                  <label className="font-medium">Password</label>
-                  <div className="relative">
-                    <input
-                      type="password"
-                      required
-                      className="w-full pl-12 mt-2 px-3 py-4 text-gray-500 bg-transparent outline-none border focus:border-indigo-600 shadow-sm rounded-lg"
-                    />
-                    <FaRegEyeSlash className="absolute top-[45%] right-[10%] z-50 text-[15px]" />
-                    <RiKey2Line className="absolute top-[38%] left-[5%] z-50 text-2xl " />
-                  </div>
-
-                  <Link to="/ChangePassword">
-                    <label className="text-[10px] flex items-end justify-end mt-2">
-                      Forgot Password?
-                    </label>
-                  </Link>
-                </div>
 
                 <div className="h-4" />
-                <Link to="/Dashboard">
+                <Link to="/NewPassword">
                   <button className="w-full px-4 py-3  text-white font-medium bg-gradient-to-r from-[#9C3FE4] to-[#C65647] active:bg-indigo-600 rounded-lg duration-150">
-                    Sign In
+                    Reset Password
                   </button>
                 </Link>
               </form>
 
               <div className="flex items-center justify-center mt-4">
                 <p>
-                  No Account yet?{" "}
-                  <Link to="/SignUp">
+                  Or Continue with{" "}
+                  <Link to="/Login">
                     <span className="text-blue-600 hover:underline hover:cursor-pointer">
-                      Sign Up
+                      Login
                     </span>
                   </Link>
                 </p>
@@ -171,4 +118,4 @@ const LoginDesktop = () => {
   );
 };
 
-export default LoginDesktop;
+export default ChangePasswordDesktop;

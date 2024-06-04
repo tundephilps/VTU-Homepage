@@ -6,6 +6,7 @@ import google from "../../../assets/google.png";
 import apple from "../../../assets/apple.png";
 
 import faceboo from "../../../assets/faceboo.png";
+import { Link } from "react-router-dom";
 
 const SignUpDesktop = () => {
   return (
@@ -177,9 +178,11 @@ const SignUpDesktop = () => {
             <div className="flex items-center justify-center mt-4">
               <p>
                 Already have an Account?{" "}
-                <span className="text-blue-600 hover:underline hover:cursor-pointer">
-                  Sign In
-                </span>
+                <Link to="/Login">
+                  <span className="text-blue-600 hover:underline hover:cursor-pointer">
+                    Sign In
+                  </span>
+                </Link>
               </p>
             </div>
           </div>

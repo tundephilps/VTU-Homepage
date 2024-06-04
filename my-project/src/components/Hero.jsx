@@ -4,6 +4,7 @@ import Avatar from "../assets/Avatar.png";
 import insta from "../assets/insta.png";
 import facebook from "../assets/facebook.png";
 import twitter from "../assets/twitter.png";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
   return (
@@ -12,12 +13,12 @@ const Hero = () => {
       <img
         src={hero}
         alt=""
-        className="absolute inset-[0%]  inline-block lg:h-[100vh] h-[220vh] w-full object-cover"
+        className="absolute inset-[0%]  inline-block lg:h-[100%] h-[100%] w-full object-cover"
       />
       {/* Container */}
 
       {/* Container */}
-      <div className="mx-auto relative z-50 w-full max-w-7xl px-5 py-16 md:px-10 md:py-24 lg:py-32">
+      <div className="mx-auto relative z-50 w-full max-w-7xl px-5 py-16 md:px-10 md:py-24 lg:py-32 overflow-x-hidden">
         {/* Component */}
         <div className="grid grid-cols-1 items-center gap-8 sm:gap-20 lg:grid-cols-2">
           {/* Heading Content */}
@@ -35,15 +36,19 @@ const Hero = () => {
               Subscription.
             </p>
             <div className="flex flex-row gap-3 ">
-              <button className="active:bg-indigo-600 duration-150 z-50 text-white cursor-pointer bg-[#247fff] font-medium rounded-lg text-sm px-8 py-2.5 me-2 mb-2  ">
-                Sign Up
-              </button>
-              <button
-                type="button"
-                className="py-2.5 px-8 me-2 mb-2 text-sm font-medium text-gray-100 focus:outline-none bg-[#4c4c4c] rounded-lg border border-[#247fff] hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700"
-              >
-                Sign In
-              </button>
+              <Link to="/SignUp">
+                <button className="active:bg-indigo-600 duration-150 z-50 text-white cursor-pointer bg-[#247fff] font-medium rounded-lg text-sm px-8 py-2.5 me-2 mb-2  ">
+                  Sign Up
+                </button>
+              </Link>
+              <Link to="/Login">
+                <button
+                  type="button"
+                  className="py-2.5 px-8 me-2 mb-2 text-sm font-medium text-gray-100 focus:outline-none bg-[#4c4c4c] rounded-lg border border-[#247fff] hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700"
+                >
+                  Sign In
+                </button>
+              </Link>
             </div>
           </div>
           {/* Image Div */}
