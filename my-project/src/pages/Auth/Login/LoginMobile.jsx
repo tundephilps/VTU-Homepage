@@ -105,9 +105,11 @@ const LoginMobile = () => {
                   </div>
 
                   <div className="h-4" />
-                  <button className="w-full px-4 py-3  text-white font-medium bg-gradient-to-r from-[#9C3FE4] to-[#C65647] active:bg-indigo-600 rounded-lg duration-150">
-                    Sign In
-                  </button>
+                  <Link to="/Dashboard">
+                    <button className="w-full px-4 py-3  text-white font-medium bg-gradient-to-r from-[#9C3FE4] to-[#C65647] active:bg-indigo-600 rounded-lg duration-150">
+                      Sign In
+                    </button>
+                  </Link>
                 </form>
                 <div className="mx-auto flex items-center justify-start mt-2">
                   <img src={contwith} className="mx-auto" />

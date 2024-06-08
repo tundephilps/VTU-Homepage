@@ -1,19 +1,6 @@
-import sidebarData from "../../data/sidebarData";
-import {
-  NavLink,
-  Outlet,
-  Route,
-  Routes,
-  Link,
-  useLocation,
-} from "react-router-dom";
+import { Outlet, Link, useLocation } from "react-router-dom";
 import React, { useState } from "react";
 import { HiMenuAlt3 } from "react-icons/hi";
-import { MdOutlineDashboard } from "react-icons/md";
-import { RiSettings4Line } from "react-icons/ri";
-import { TbReportAnalytics } from "react-icons/tb";
-import { AiOutlineUser, AiOutlineHeart } from "react-icons/ai";
-import { FiMessageSquare, FiFolder, FiShoppingCart } from "react-icons/fi";
 import home from "../../assets/home.png";
 import airtime from "../../assets/airtime.png";
 import Data from "../../assets/Data.png";
@@ -24,8 +11,8 @@ import Savings from "../../assets/Savings.png";
 import Referral from "../../assets/Referral.png";
 import Transaction from "../../assets/Transaction.png";
 import Wallet from "../../assets/Wallet.png";
-
 import logout from "../../assets/logout.png";
+import NavbarMobile from "../../components/Dashboard/NavbarMobile";
 
 const Layout = () => {
   const menus = [
@@ -72,9 +59,9 @@ const Layout = () => {
   const location = useLocation();
 
   return (
-    <div className="h-[100vh] flex flex-row">
+    <div className="lg:min-h-screen  h-full flex flex-row">
       <div
-        className={`bg-[#151316] min-h-screen ${
+        className={`bg-[#151316]  min-h-screen lg:block hidden ${
           open ? "w-72" : "w-16"
         } duration-500 text-gray-100 px-4`}
       >
@@ -126,7 +113,9 @@ const Layout = () => {
           {/* <Link>Become an Agent</Link> */}
         </div>
       </div>
-      <div className=" h-[100vh] w-full bg-[#f4eee] ">
+
+      <div className="lg:h-screen h-full  w-full bg-[#f4eeee] ">
+        <NavbarMobile />
         <Outlet />
       </div>
     </div>

@@ -1,4 +1,3 @@
-import "./App.css";
 import Login from "./pages/Auth/Login";
 import SignUp from "./pages/Auth/SignUp";
 import { Routes, Route, BrowserRouter, NavLink } from "react-router-dom";

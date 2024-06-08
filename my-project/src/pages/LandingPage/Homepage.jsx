@@ -1,13 +1,13 @@
-import Navbar from "../../components/Navbar";
-import NavbarMobile from "../../components/NavbarMobile";
-import Hero from "../../components/Hero";
-import Companies from "../../components/Companies";
-import Plan from "../../components/Plan";
-import { Contact } from "../../components/Contact";
-import Services from "../../components/Services";
-import { Services2 } from "../../components/Services2";
-import { Testimonial } from "../../components/Testimonial";
-import { Footer } from "../../components/Footer";
+import Navbar from "../../components/LandingPage/Navbar";
+import NavbarMobile from "../../components/LandingPage/NavbarMobile";
+import Hero from "../../components/LandingPage/Hero";
+import Companies from "../../components/LandingPage/Companies";
+import Plan from "../../components/LandingPage/Plan";
+import { Contact } from "../../components/LandingPage/Contact";
+import Services from "../../components/LandingPage/Services";
+import { Services2 } from "../../components/LandingPage/Services2";
+import { Testimonial } from "../../components/LandingPage/Testimonial";
+import { Footer } from "../../components/LandingPage/Footer";
 
 function Homepage() {
   return (
