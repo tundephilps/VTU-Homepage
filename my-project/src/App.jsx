@@ -30,18 +30,18 @@ function App() {
         <Route path="/Login" element={<Login />} />
 
         <Route element={<Layout />}>
-          <Route path="Dashboard" element={<Dashboard />} />
-          <Route path="Airtime" element={<Airtime />} />
-          <Route path="Data" element={<Data />} />
-          <Route path="Electricity" element={<Electricity />} />
-          <Route path="TvSubscription" element={<TVSubscription />} />
-          <Route path="BankTransfer" element={<BankTransfer />} />
-          <Route path="TargetSavings" element={<TargetSavings />} />
+          <Route path="dashboard" element={<Dashboard />} />
+          <Route path="airtime" element={<Airtime />} />
+          <Route path="data" element={<Data />} />
+          <Route path="electricity" element={<Electricity />} />
+          <Route path="tvSubscription" element={<TVSubscription />} />
+          <Route path="bankTransfer" element={<BankTransfer />} />
+          <Route path="targetSavings" element={<TargetSavings />} />
 
-          <Route path="Referrals" element={<Referrals />} />
-          <Route path="Transactions" element={<Transactions />} />
-          <Route path="FundWallet" element={<FundWallet />} />
-          <Route path="BecomeAnAgent" element={<BecomeAnAgent />} />
+          <Route path="referrals" element={<Referrals />} />
+          <Route path="transactions" element={<Transactions />} />
+          <Route path="fundWallet" element={<FundWallet />} />
+          <Route path="becomeAnAgent" element={<BecomeAnAgent />} />
         </Route>
       </Routes>
       {/* <div>

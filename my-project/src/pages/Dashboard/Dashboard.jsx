@@ -16,20 +16,19 @@ import ChartJsExample from "../../components/Dashboard/ChartsTable";
 
 const Dashboard = () => {
   return (
-    <div className="lg:p-4 p-[0px] ">
+    <div className="p-2 block overflow-x-hidden">
       <Header />
-      <h1 className="pt-8">Welcome Fagorusi</h1>
-
+      <h1 className="text-2xl font-bold pt-8">Welcome Fagorusi</h1>
       {/* Grid */}
-      <div className="grid lg:grid-cols-2 grid-col-1 lg:gap-8 gap-14 py-6">
+      <div className="grid lg:grid-cols-2 grid-col-1 lg:gap-8 gap-y-14 lg:py-6  ">
         {/* Credit Card */}
-        <div className="relative lg:h-[250px] h-[100%]">
+        <div className="relative lg:h-[250px] h-[100%] w-[96%]">
           <img
             src={card}
-            className="absolute inset-[0%]  inline-block h-[250px] lg:w-full w-screen"
+            className="absolute inset-[0%]  inline-block h-[250px] lg:w-full"
             alt=""
           />
-          <div className="mx-auto relative flex flex-row justify-between p-6">
+          <div className="mx-auto relative flex flex-row justify-between p-6 w-full">
             <div>
               <p className="text-white lg:text-2xl text-lg pt-[120px] font-bold font-serif">
                 N1,800,000
@@ -52,7 +51,7 @@ const Dashboard = () => {
           </div>
         </div>
         {/* Quick Link */}
-        <div className="bg-[#d0d2d5] lg:w-full lg:h-[250px] h-full w-full p-4 lg:mt-0 mt-4">
+        <div className="bg-[#d0d2d5] lg:w-full lg:h-[250px] h-full w-[96%] p-4 lg:mt-0 mt-4">
           <p className="text-center pb-6">Quick Link</p>
           <div className=" grid lg:grid-cols-2 gap-3">
             {/* First Grid */}
@@ -102,8 +101,9 @@ const Dashboard = () => {
         </div>
         {/* Swiper */}
 
-        <Adverts />
-
+        <div className="h-[100%] lg:h-full lg:w-full w-screen rounded-xl  mx-auto ">
+          <Adverts />
+        </div>
         <ChartJsExample />
       </div>
     </div>

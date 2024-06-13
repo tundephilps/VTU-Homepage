@@ -16,40 +16,40 @@ import NavbarMobile from "../../components/Dashboard/NavbarMobile";
 
 const Layout = () => {
   const menus = [
-    { name: "Dashboard", link: "/Dashboard", iconSrc: home },
+    { name: "Dashboard", link: "/dashboard", iconSrc: home },
     {
       name: "Airtime",
-      link: "/Airtime",
+      link: "/airtime",
       iconSrc: airtime,
     },
-    { name: "Data", link: "/Data", iconSrc: Data },
+    { name: "Data", link: "/data", iconSrc: Data },
     {
       name: "Electricity",
-      link: "/Electricity",
+      link: "/electricity",
       iconSrc: Electricity,
     },
     {
       name: "Tv Subscription",
-      link: "/TVSubscription",
+      link: "/tvSubscription",
       iconSrc: Sub,
     },
     {
       name: "Bank Transfer",
-      link: "/BankTransfer",
+      link: "/bankTransfer",
       iconSrc: Bank,
     },
     {
       name: "Target Savings",
-      link: "/TargetSavings",
+      link: "/targetSavings",
       iconSrc: Savings,
     },
-    { name: "Referrals", link: "/Referrals", iconSrc: Referral, margin: true },
-    { name: "Transactions", link: "/Transactions", iconSrc: Transaction },
-    { name: "Fund Wallet", link: "/FundWallet", iconSrc: Wallet },
+    { name: "Referrals", link: "/referrals", iconSrc: Referral, margin: true },
+    { name: "Transactions", link: "/transactions", iconSrc: Transaction },
+    { name: "Fund Wallet", link: "/fundWallet", iconSrc: Wallet },
     { name: "Logout", link: "/", iconSrc: logout },
     {
       name: "Become An Agent",
-      link: "/BecomeAnAgent",
+      link: "/becomeAnAgent",
 
       margin: true,
     },
@@ -104,7 +104,7 @@ const Layout = () => {
               <h2
                 className={`${
                   open && "hidden"
-                } absolute left-48 bg-white font-semibold whitespace-pre text-gray-900 rounded-md drop-shadow-lg px-0 py-0 w-0 overflow-hidden group-hover:px-2 group-hover:py-1 group-hover:left-14 group-hover:duration-300 group-hover:w-fit  `}
+                } absolute z-40 left-48 bg-white font-semibold whitespace-pre text-gray-900 rounded-md drop-shadow-lg px-0 py-0 w-0 overflow-hidden group-hover:px-2 group-hover:py-1 group-hover:left-14 group-hover:duration-300 group-hover:w-fit  `}
               >
                 {menu?.name}
               </h2>
@@ -114,8 +114,7 @@ const Layout = () => {
         </div>
       </div>
 
-      <div className="lg:h-screen h-full  w-full bg-[#f4eeee] ">
-        <NavbarMobile />
+      <div className="lg:min-h-screen h-full  w-full bg-[#f4eeee] ">
         <Outlet />
       </div>
     </div>

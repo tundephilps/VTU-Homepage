@@ -26,29 +26,27 @@ const ads = [
 
 const Adverts = () => {
   return (
-    <div className="h-[35%] lg:w-full w-[100vw] rounded-xl object-cover">
-      <Swiper
-        autoplay={{
-          delay: 3000,
-          disableOnInteraction: false,
-        }}
-        // navigation={true}
-        loop={true}
-        slidesPerView={1}
-        spaceBetween={0}
-        modules={[Autoplay, Pagination, Navigation]}
-      >
-        {ads.map((ad) => (
-          <SwiperSlide key={ad.id}>
-            <img
-              src={ad.img}
-              alt={ad.id}
-              className=" object-cover rounded-md h-full w-full"
-            />
-          </SwiperSlide>
-        ))}
-      </Swiper>
-    </div>
+    <Swiper
+      autoplay={{
+        delay: 3000,
+        disableOnInteraction: false,
+      }}
+      // navigation={true}
+      loop={true}
+      slidesPerView={1}
+      spaceBetween={0}
+      modules={[Autoplay, Pagination, Navigation]}
+    >
+      {ads.map((ad) => (
+        <SwiperSlide key={ad.id}>
+          <img
+            src={ad.img}
+            alt={ad.id}
+            className=" object-contain rounded-md lg:h-[90%] h-full w-[96%]"
+          />
+        </SwiperSlide>
+      ))}
+    </Swiper>
   );
 };
 

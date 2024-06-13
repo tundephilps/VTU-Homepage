@@ -105,7 +105,7 @@ const LoginMobile = () => {
                   </div>
 
                   <div className="h-4" />
-                  <Link to="/Dashboard">
+                  <Link to="/dashboard">
                     <button className="w-full px-4 py-3  text-white font-medium bg-gradient-to-r from-[#9C3FE4] to-[#C65647] active:bg-indigo-600 rounded-lg duration-150">
                       Sign In
                     </button>

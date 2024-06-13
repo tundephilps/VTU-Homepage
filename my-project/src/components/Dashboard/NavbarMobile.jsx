@@ -29,7 +29,7 @@ const NavbarMobile = () => {
           >
             <li>
               <Link
-                to="/Dashboard"
+                to="/dashboard"
                 className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
               >
                 Dashboard
@@ -37,7 +37,7 @@ const NavbarMobile = () => {
             </li>
             <li>
               <Link
-                to="/Airtime"
+                to="/airtime"
                 className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
               >
                 Airtime
@@ -45,7 +45,7 @@ const NavbarMobile = () => {
             </li>
             <li>
               <Link
-                to="/Data"
+                to="/data"
                 className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
               >
                 Data
@@ -53,7 +53,7 @@ const NavbarMobile = () => {
             </li>
             <li>
               <Link
-                to="/Electricity"
+                to="/electricity"
                 className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
               >
                 Electricity
@@ -61,7 +61,7 @@ const NavbarMobile = () => {
             </li>
             <li>
               <Link
-                to="/TVSubscription"
+                to="/tvSubscription"
                 className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
               >
                 TV Subscription
@@ -69,7 +69,7 @@ const NavbarMobile = () => {
             </li>
             <li>
               <Link
-                to="/BankTransfer"
+                to="/bankTransfer"
                 className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
               >
                 Bank Transfer
@@ -77,7 +77,7 @@ const NavbarMobile = () => {
             </li>{" "}
             <li>
               <Link
-                to="/TargetSavings"
+                to="/targetSavings"
                 className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
               >
                 Target Savings
@@ -86,19 +86,19 @@ const NavbarMobile = () => {
           </ul>
           <div className="py-2">
             <Link
-              to="/Referrals"
+              to="/referrals"
               className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
             >
               Refferals
             </Link>
             <Link
-              to="/Transactions"
+              to="/transactions"
               className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
             >
               Transactions
             </Link>
             <Link
-              to="/FundWallet"
+              to="/fundWallet"
               className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
             >
               Fund Wallet
@@ -113,7 +113,7 @@ const NavbarMobile = () => {
 
           <div className="py-2">
             <Link
-              to="/BecomeAnAgent"
+              to="/becomeAnAgent"
               className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
             >
               Become An Agent

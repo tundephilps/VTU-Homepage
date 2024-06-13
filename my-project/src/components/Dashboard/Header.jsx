@@ -7,13 +7,126 @@ import { IoKeySharp } from "react-icons/io5";
 import { RiCustomerService2Fill } from "react-icons/ri";
 import { FaSignOutAlt } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { IoMdMenu } from "react-icons/io";
 
 const Header = () => {
   const [showMenu, setShowMenu] = useState(false);
   const [showAlert, setShowAlert] = useState(false);
 
+  const [showMenuBar, setShowMenuBar] = useState(false);
+
   return (
-    <div className="flex flex-row items-center justify-between ">
+    <div className="relative flex flex-row items-center justify-between ">
+      <button
+        className="lg:hidden block    font-bold rounded"
+        onClick={() => setShowMenuBar(!showMenuBar)}
+      >
+        <IoMdMenu className="text-black text-3xl" />
+      </button>
+
+      {showMenuBar && (
+        <div
+          onClick={() => setShowMenu(false)}
+          className="absolute z-10 block bg-white divide-y  top-12 left-[1%]  divide-gray-100 rounded-lg shadow w-44"
+        >
+          <ul
+            className="py-2 text-sm text-gray-700 dark:text-gray-200"
+            aria-labelledby="dropdownMenuIconHorizontalButton"
+          >
+            <li>
+              <Link
+                to="/dashboard"
+                className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+              >
+                Dashboard
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/airtime"
+                className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+              >
+                Airtime
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/data"
+                className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+              >
+                Data
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/electricity"
+                className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+              >
+                Electricity
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/tvSubscription"
+                className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+              >
+                TV Subscription
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/bankTransfer"
+                className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+              >
+                Bank Transfer
+              </Link>
+            </li>{" "}
+            <li>
+              <Link
+                to="/targetSavings"
+                className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+              >
+                Target Savings
+              </Link>
+            </li>
+          </ul>
+          <div className="py-2">
+            <Link
+              to="/referrals"
+              className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
+            >
+              Refferals
+            </Link>
+            <Link
+              to="/transactions"
+              className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
+            >
+              Transactions
+            </Link>
+            <Link
+              to="/fundWallet"
+              className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
+            >
+              Fund Wallet
+            </Link>
+            <Link
+              to="/"
+              className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
+            >
+              LogOut
+            </Link>
+          </div>
+
+          <div className="py-2">
+            <Link
+              to="/becomeAnAgent"
+              className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
+            >
+              Become An Agent
+            </Link>
+          </div>
+        </div>
+      )}
       <div
         onClick={() => setShowAlert(!showAlert)}
         className="p-2 bg-white rounded-full relative"
