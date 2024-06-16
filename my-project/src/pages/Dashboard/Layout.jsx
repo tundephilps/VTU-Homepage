@@ -13,6 +13,7 @@ import Transaction from "../../assets/Transaction.png";
 import Wallet from "../../assets/Wallet.png";
 import logout from "../../assets/logout.png";
 import NavbarMobile from "../../components/Dashboard/NavbarMobile";
+import message from "../../../src/assets/message.png";
 
 const Layout = () => {
   const menus = [
@@ -114,7 +115,13 @@ const Layout = () => {
         </div>
       </div>
 
-      <div className="lg:min-h-screen h-full  w-full bg-[#f4eeee] ">
+      <div className="lg:min-h-screen h-full  w-full bg-[#f4eeee] relative ">
+        <div className="animate-bounce fixed bottom-5 right-5 z-50 hover:cursor-pointer">
+          <img className="" src={message} />
+          <p className="text-[6px] absolute top-[57%] right-[38%] p-1 bg-[#E300EF]">
+            Quick Chat
+          </p>
+        </div>
         <Outlet />
       </div>
     </div>

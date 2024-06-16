@@ -30,25 +30,25 @@ const Airtime = () => {
           <div>
             <label
               for="input-group-1"
-              class="block mb-2 text-sm font-medium text-gray-900 "
+              className="block mb-2 text-sm font-medium text-gray-900 "
             >
               Mobile Number
             </label>
-            <div class="relative mb-6 lg:w-[700px]">
-              <div class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none">
-                <FaPhone class="w-4 h-4 text-gray-500 dark:text-gray-400" />
+            <div className="relative mb-6 lg:w-[700px]">
+              <div className="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none">
+                <FaPhone className="w-4 h-4 text-gray-500 dark:text-gray-400" />
               </div>
               <input
                 type="text"
                 id="input-group-1"
-                class="w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block ps-10 p-2.5  "
+                className="w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block ps-10 p-2.5  "
                 placeholder="+234 000 0000 000"
               />
             </div>
           </div>
 
           <div className="pb-7">
-            <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+            <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
               Choose Network
             </label>
             <div
@@ -66,18 +66,18 @@ const Airtime = () => {
               </button>
             </div>
             {showDropdown && (
-              <div class="z-10 absolute bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700">
+              <div className="z-10 absolute bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700">
                 <ul
-                  class="py-2 text-sm text-gray-700 dark:text-gray-200"
+                  className="py-2 text-sm text-gray-700 dark:text-gray-200"
                   aria-labelledby="states-button"
                 >
                   <li>
                     <button
                       type="button"
-                      class="inline-flex w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white"
+                      className="inline-flex w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white"
                       onClick={() => handleSelect("MTN")}
                     >
-                      <div class="inline-flex items-center">
+                      <div className="inline-flex items-center">
                         <img src={MTN} className="h-4 w-4 mr-2" />
                         MTN
                       </div>
@@ -86,10 +86,10 @@ const Airtime = () => {
                   <li>
                     <button
                       type="button"
-                      class="inline-flex w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white"
+                      className="inline-flex w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white"
                       onClick={() => handleSelect("GLO")}
                     >
-                      <div class="inline-flex items-center">
+                      <div className="inline-flex items-center">
                         <img src={GLO} className="h-4 w-4 mr-2" />
                         GLO
                       </div>
@@ -98,10 +98,10 @@ const Airtime = () => {
                   <li>
                     <button
                       type="button"
-                      class="inline-flex w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white"
+                      className="inline-flex w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white"
                       onClick={() => handleSelect("AIRTEL")}
                     >
-                      <div class="inline-flex items-center">
+                      <div className="inline-flex items-center">
                         <img src={AIRTEL} className="h-4 w-4 mr-2" />
                         AIRTEL
                       </div>
@@ -110,10 +110,10 @@ const Airtime = () => {
                   <li>
                     <button
                       type="button"
-                      class="inline-flex w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white"
+                      className="inline-flex w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white"
                       onClick={() => handleSelect("9MOBILE")}
                     >
-                      <div class="inline-flex items-center">
+                      <div className="inline-flex items-center">
                         <img src={ETI} className="h-4 w-4 mr-2" />
                         9MOBILE
                       </div>
@@ -173,20 +173,20 @@ const Airtime = () => {
         </div>
 
         <div className="flex lg:flex-row items-center gap-12">
-          <div class="relative pt-8 w-[70%]   ">
-            <span class="absolute start-0 bottom-6 text-gray-500 dark:text-gray-400">
+          <div className="relative pt-8 w-[70%]   ">
+            <span className="absolute start-0 bottom-6 text-gray-500 dark:text-gray-400">
               <h1 className="text-3xl"> ₦</h1>
             </span>
             <input
               type="text"
               id="floating-phone-number"
-              class="block py-1 ps-8 pe-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+              className="block py-1 ps-8 pe-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
               pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
               placeholder="Enter Amount"
             />
             <label
               for="floating-phone-number"
-              class="text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-placeholder-shown:start-6 peer-focus:start-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto"
+              className="text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-placeholder-shown:start-6 peer-focus:start-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto"
             >
               ₦50 - ₦50,000
             </label>

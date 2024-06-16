@@ -8,12 +8,28 @@ import { RiCustomerService2Fill } from "react-icons/ri";
 import { FaSignOutAlt } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { IoMdMenu } from "react-icons/io";
+import { GoAlertFill } from "react-icons/go";
+import { Modal } from "./Modals/Modal";
 
 const Header = () => {
   const [showMenu, setShowMenu] = useState(false);
   const [showAlert, setShowAlert] = useState(false);
 
   const [showMenuBar, setShowMenuBar] = useState(false);
+
+  const [isOpen, setIsOpen] = useState(false);
+
+  const [showModal, setShowModal] = useState(false);
+  const [formType, setFormType] = useState("");
+
+  const handleOpenModal = (type) => {
+    setFormType(type);
+    setShowModal(true);
+  };
+
+  const handleCloseModal = () => {
+    setShowModal(false);
+  };
 
   return (
     <div className="relative flex flex-row items-center justify-between ">
@@ -196,7 +212,7 @@ const Header = () => {
           type="search"
           name="Search"
           placeholder="Search..."
-          className="lg:w-20 w-20 py-2 lg:pl-3 pl-0 text-sm rounded-md sm:w-auto focus:outline-none "
+          className="lg:w-full w-20 py-2 lg:pl-3 pl-0 text-sm bg-white rounded-md sm:w-auto focus:outline-none "
         />
       </div>
 
@@ -219,18 +235,18 @@ const Header = () => {
           >
             <li>
               <a
-                href="#"
+                onClick={() => handleOpenModal("Personal Information")}
                 className="flex flex-row items-center gap-2 px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 "
               >
                 <div className="rounded-full bg-gray-400 p-2">
                   <FaUser />
                 </div>
-                <p> Profile</p>
+                <p>Profile</p>
               </a>
             </li>
             <li>
               <a
-                href="#"
+                onClick={() => handleOpenModal("Change Password")}
                 className="flex flex-row items-center gap-2 px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 "
               >
                 <div className="rounded-full bg-gray-400 p-2">
@@ -241,7 +257,7 @@ const Header = () => {
             </li>
             <li>
               <a
-                href="#"
+                onClick={() => handleOpenModal("Change Pin")}
                 className="flex flex-row items-center gap-2 px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 "
               >
                 <div className="rounded-full bg-gray-400 p-2">
@@ -252,18 +268,18 @@ const Header = () => {
             </li>
             <li>
               <a
-                href="#"
+                onClick={() => handleOpenModal("Complain")}
                 className="flex flex-row items-center gap-2 px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 "
               >
                 <div className="rounded-full bg-gray-400 p-2">
-                  <RiCustomerService2Fill />
+                  <GoAlertFill />
                 </div>
                 <p>Complain</p>
               </a>
             </li>
             <li>
               <a
-                href="#"
+                onClick={() => handleOpenModal("signOut")}
                 className="flex flex-row items-center gap-2 px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 "
               >
                 <div className="rounded-full bg-gray-400 p-2">
@@ -275,6 +291,8 @@ const Header = () => {
           </ul>
         </div>
       )}
+
+      <Modal show={showModal} onClose={handleCloseModal} formType={formType} />
     </div>
   );
 };
