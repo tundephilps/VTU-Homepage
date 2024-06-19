@@ -14,7 +14,7 @@ const Complain = () => {
         <label className="block text-xs mb-2 font-medium">Complain Type</label>
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          className="absolute top-3 bottom-0 w-5 h-5 my-auto text-gray-400 right-3"
+          className="absolute top-6ve bottom-0 w-5 h-5 my-auto text-gray-400 right-3"
           viewBox="0 0 20 20"
           fill="currentColor"
         >
@@ -36,7 +36,7 @@ const Complain = () => {
       </div>
       <div class="mb-3">
         <label
-          for="default-input"
+          htmlFor="default-input"
           class="block mb-2 text-xs font-medium text-gray-900"
         >
           Transaction ID
@@ -50,7 +50,7 @@ const Complain = () => {
       </div>
       <div className="mb-3">
         <label
-          for="message"
+          htmlFor="message"
           class="block mb-2 text-xs font-medium text-gray-900 dark:text-white"
         >
           Complain Description
@@ -70,7 +70,7 @@ const Complain = () => {
         </p>
         <label
           htmlFor="dropzone-file"
-          className=" mx-auto border-dashed border-2 border-[#e3caca] rounded-3xl h-[100px] w-full flex items-center justify-center"
+          className="mx-auto border-dashed border-2 border-[#e3caca] rounded-3xl h-[100px] w-full flex items-center justify-center"
         >
           <VscAdd className="h-12 w-12 text-[#c65647]" />
         </label>

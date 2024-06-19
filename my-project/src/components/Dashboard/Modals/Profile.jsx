@@ -1,13 +1,21 @@
 import React from "react";
+import Avatar from "../../../assets/Test1.png";
 
 const Profile = () => {
   const radios = ["Male", "Female"];
   return (
     <form>
+      <div className="flex items-center justify-center  py-3">
+        <img
+          alt=""
+          className="w-12 h-12 rounded-full ring-2 ring-offset-4 dark:bg-gray-500"
+          src={Avatar}
+        />
+      </div>
       <div className="grid gap-6 mb-6 md:grid-cols-2">
         <div>
           <label
-            for="first_name"
+            htmlFor="first_name"
             className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
           >
             First name
@@ -22,7 +30,7 @@ const Profile = () => {
         </div>
         <div>
           <label
-            for="last_name"
+            htmlFor="last_name"
             className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
           >
             Middle name
@@ -37,7 +45,7 @@ const Profile = () => {
         </div>
         <div>
           <label
-            for="company"
+            htmlFor="company"
             className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
           >
             Surname
@@ -52,7 +60,7 @@ const Profile = () => {
         </div>
         <div>
           <label
-            for="company"
+            htmlFor="company"
             className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
           >
             Username
@@ -81,7 +89,7 @@ const Profile = () => {
                 className="form-radio border-gray-400 text-indigo-600 focus:ring-indigo-600 duration-150"
               />
               <label
-                htmlFor={idx}
+                htmlhtmlFor={idx}
                 className="text-sm text-gray-700 font-medium"
               >
                 {item}
@@ -92,7 +100,7 @@ const Profile = () => {
       </div>
       <div className="mt-6">
         <label
-          for="phone"
+          htmlFor="phone"
           className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
         >
           Phone number
@@ -108,7 +116,7 @@ const Profile = () => {
       </div>
       <div className="mb-6 mt-6">
         <label
-          for="email"
+          htmlFor="email"
           className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
         >
           Email address
@@ -126,7 +134,7 @@ const Profile = () => {
         type="submit"
         className="text-white flex lg:w-full bg-gradient-to-r from-[#9C3FE4] to-[#C65647] focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm mx-auto sm:w-auto px-5 py-2.5 text-center"
       >
-        <p className="mx-auto">Edit</p>
+        <p className="mx-auto">Save</p>
       </button>
     </form>
   );

@@ -1,7 +1,7 @@
 import React from "react";
 import Header from "../../components/Dashboard/Header";
 import dstv from "../../assets/dstv.png";
-
+import { Link } from "react-router-dom";
 import gotv from "../../assets/gotv.png";
 import startimes from "../../assets/startimes.png";
 
@@ -22,7 +22,7 @@ const TVSubscription = () => {
         </div>
         <div className="pt-6">
           <label
-            for="number-input"
+            htmlFor="number-input"
             className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
           >
             Smart Card Number/ IUC Number:
@@ -83,6 +83,14 @@ const TVSubscription = () => {
               <p className="text-3xl text-black font-extrabold">N15000</p>
             </button>
           </div>
+        </div>
+        <div className="w-full pt-8 block">
+          <Link
+            to="/PaymentSummaryTVSub"
+            className="block text-center w-full px-4 py-3  text-white font-medium bg-gradient-to-r from-[#9C3FE4] to-[#C65647] active:bg-indigo-600 rounded-lg duration-150"
+          >
+            Buy
+          </Link>
         </div>
       </div>
     </div>

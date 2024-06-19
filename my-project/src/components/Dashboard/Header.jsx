@@ -279,7 +279,7 @@ const Header = () => {
             </li>
             <li>
               <a
-                onClick={() => handleOpenModal("signOut")}
+                onClick={() => handleOpenModal("Logout of Waradata")}
                 className="flex flex-row items-center gap-2 px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 "
               >
                 <div className="rounded-full bg-gray-400 p-2">

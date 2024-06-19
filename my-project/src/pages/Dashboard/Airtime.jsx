@@ -6,6 +6,8 @@ import AIRTEL from "../../assets/AIRTEL.png";
 import ETI from "../../assets/ETI.png";
 import React, { useState } from "react";
 import { RiArrowDropDownFill } from "react-icons/ri";
+import { Modal } from "../../components/Dashboard/Modals/Modal";
+import { Link } from "react-router-dom";
 
 const Airtime = () => {
   const [selectedItem, setSelectedItem] = useState("");
@@ -29,7 +31,7 @@ const Airtime = () => {
         <div className="lg:flex flex-col lg:flex-row  items-center justify-between w-full">
           <div>
             <label
-              for="input-group-1"
+              htmlFor="input-group-1"
               className="block mb-2 text-sm font-medium text-gray-900 "
             >
               Mobile Number
@@ -66,7 +68,7 @@ const Airtime = () => {
               </button>
             </div>
             {showDropdown && (
-              <div className="z-10 absolute bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700">
+              <div className="z-10 absolute bg-white divide-y divide-gray-100 rounded-lg shadow w-44 ">
                 <ul
                   className="py-2 text-sm text-gray-700 dark:text-gray-200"
                   aria-labelledby="states-button"
@@ -185,15 +187,18 @@ const Airtime = () => {
               placeholder="Enter Amount"
             />
             <label
-              for="floating-phone-number"
+              htmlFor="floating-phone-number"
               className="text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-placeholder-shown:start-6 peer-focus:start-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto"
             >
               ₦50 - ₦50,000
             </label>
           </div>
-          <button className=" w-[30%] px-4 py-3  text-white font-medium bg-gradient-to-r from-[#9C3FE4] to-[#C65647] active:bg-indigo-600 rounded-lg duration-150">
+          <Link
+            to="/PaymentSummaryAirtime"
+            className="text-center w-[30%] px-4 py-3  text-white font-medium bg-gradient-to-r from-[#9C3FE4] to-[#C65647] active:bg-indigo-600 rounded-lg duration-150"
+          >
             Buy
-          </button>
+          </Link>
         </div>
       </div>
     </div>

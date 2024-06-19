@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Logo from "../../../assets/logo.png";
 
 import google from "../../../assets/google.png";
@@ -7,8 +7,21 @@ import apple from "../../../assets/apple.png";
 
 import faceboo from "../../../assets/faceboo.png";
 import { Link } from "react-router-dom";
+import { Modal } from "../../../components/Dashboard/Modals/Modal";
 
 const SignUpDesktop = () => {
+  const [showModal, setShowModal] = useState(false);
+  const [formType, setFormType] = useState("");
+
+  const handleOpenModal = (type) => {
+    setFormType(type);
+    setShowModal(true);
+  };
+
+  const handleCloseModal = () => {
+    setShowModal(false);
+  };
+
   return (
     <>
       <main className="w-full flex">
@@ -171,7 +184,10 @@ const SignUpDesktop = () => {
                 </div>
               </div>
               <div className="h-4" />
-              <button className="w-full px-4 py-3  text-white font-medium bg-gradient-to-r from-[#9C3FE4] to-[#C65647] active:bg-indigo-600 rounded-lg duration-150">
+              <button
+                onClick={() => handleOpenModal("Email Verification")}
+                className="w-full px-4 py-3  text-white font-medium bg-gradient-to-r from-[#9C3FE4] to-[#C65647] active:bg-indigo-600 rounded-lg duration-150"
+              >
                 Sign Up
               </button>
             </form>
@@ -187,6 +203,12 @@ const SignUpDesktop = () => {
             </div>
           </div>
         </div>
+
+        <Modal
+          show={showModal}
+          onClose={handleCloseModal}
+          formType={formType}
+        />
       </main>
     </>
   );

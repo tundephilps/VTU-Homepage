@@ -3,6 +3,7 @@ import Header from "../../components/Dashboard/Header";
 import { FaPhone } from "react-icons/fa";
 import { RiArrowDropDownLine } from "react-icons/ri";
 import DataPlans from "../../components/Dashboard/DataPlans";
+import { Link } from "react-router-dom";
 
 const Data = () => {
   return (
@@ -41,7 +42,7 @@ const Data = () => {
 
       <div className="pt-6">
         <label
-          for="input-group-1"
+          htmlFor="input-group-1"
           className="block mb-2 text-md font-medium text-gray-900 "
         >
           Mobile Number{" "}
@@ -63,7 +64,7 @@ const Data = () => {
       </div>
 
       <div className=" flex w-full lg:w-[40%] relative">
-        <label for="underline_select" className="sr-only">
+        <label htmlFor="underline_select" className="sr-only">
           Underline select
         </label>
         <select
@@ -93,6 +94,15 @@ const Data = () => {
       </div>
 
       <DataPlans />
+
+      <div className="w-full pt-8 block">
+        <Link
+          to="/PaymentSummaryData"
+          className="block text-center w-full px-4 py-3  text-white font-medium bg-gradient-to-r from-[#9C3FE4] to-[#C65647] active:bg-indigo-600 rounded-lg duration-150"
+        >
+          Buy
+        </Link>
+      </div>
     </div>
   );
 };

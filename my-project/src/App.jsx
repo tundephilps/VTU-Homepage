@@ -18,6 +18,10 @@ import Referrals from "./pages/Dashboard/Referrals";
 import Transactions from "./pages/Dashboard/Transactions";
 import FundWallet from "./pages/Dashboard/FundWallet";
 import BecomeAnAgent from "./pages/Dashboard/BecomeAnAgent";
+import PaymentSummaryAirtime from "./components/Dashboard/PaymentSummaryAirtime";
+import PaymentSummaryData from "./components/Dashboard/PaymentSummaryData";
+import PaymentSummaryElectricity from "./components/Dashboard/PaymentSummaryElectricity";
+import PaymentSummaryTVSub from "./components/Dashboard/PaymentSummaryTVSub";
 
 function App() {
   return (
@@ -42,6 +46,18 @@ function App() {
           <Route path="transactions" element={<Transactions />} />
           <Route path="fundWallet" element={<FundWallet />} />
           <Route path="becomeAnAgent" element={<BecomeAnAgent />} />
+
+          <Route
+            path="PaymentSummaryAirtime"
+            element={<PaymentSummaryAirtime />}
+          />
+          <Route path="PaymentSummaryData" element={<PaymentSummaryData />} />
+
+          <Route
+            path="PaymentSummaryElectricity"
+            element={<PaymentSummaryElectricity />}
+          />
+          <Route path="PaymentSummaryTVSub" element={<PaymentSummaryTVSub />} />
         </Route>
       </Routes>
       {/* <div>

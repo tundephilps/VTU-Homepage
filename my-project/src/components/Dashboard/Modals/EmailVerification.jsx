@@ -1,6 +1,6 @@
 import { useRef, useState } from "react";
 
-export default function ChangePin() {
+export default function EmailVerification() {
   const fieldsRef = useRef();
   const [state, setState] = useState({
     code1: "",
@@ -38,17 +38,12 @@ export default function ChangePin() {
 
   return (
     <div>
-      <p className="text-gray-600 text-2xl font-extrabold text-center">
-        Enter Verification Code To change pin
-      </p>
       <p className="text-center">
-        Enter code that was sent to your email
-        <br />
-        xxxx@gmail.com
+        Check your email and Click "Activate Account" to login
       </p>
       <div
         ref={fieldsRef}
-        className="mt-2 flex items-center gap-x-10 lg:gap-x-12"
+        className="mt-8 flex items-center gap-x-10 lg:gap-x-12"
       >
         <input
           type="text"
@@ -90,9 +85,6 @@ export default function ChangePin() {
       <button className="w-full mt-8 px-6 py-2 bg-gradient-to-r from-[#9C3FE4] to-[#C65647] text-white rounded-lg">
         Confirm
       </button>
-      <p className="text-gray-600 text-xs text-center font-extrabold pt-6">
-        Resend Code
-      </p>
     </div>
   );
 }

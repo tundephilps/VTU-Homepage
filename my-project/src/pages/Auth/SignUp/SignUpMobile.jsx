@@ -1,6 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
 import ball2 from "../../../assets/ball2.png";
-
 import ball1 from "../../../assets/ball1.png";
 import book from "../../../assets/book.png";
 import objects from "../../../assets/objects.png";
@@ -10,8 +9,21 @@ import Link2 from "../../../assets/Link2.png";
 import Link3 from "../../../assets/Link3.png";
 import Signwith from "../../../assets/Signwith.png";
 import { Link } from "react-router-dom";
+import { Modal } from "../../../components/Dashboard/Modals/Modal";
 
 const SignUpMobile = () => {
+  const [showModal, setShowModal] = useState(false);
+  const [formType, setFormType] = useState("");
+
+  const handleOpenModal = (type) => {
+    setFormType(type);
+    setShowModal(true);
+  };
+
+  const handleCloseModal = () => {
+    setShowModal(false);
+  };
+
   return (
     <div className="w-full h-screen bg-white mx-auto flex items-center relative">
       <div className="bg-[#151316] h-[110%] w-[430px] overflow-hidden mx-auto rounded-lg relative z-30">
@@ -131,7 +143,10 @@ const SignUpMobile = () => {
                   </div>
                 </div>
                 <div className="h-4" />
-                <button className="w-full px-4 py-3  text-white font-medium bg-gradient-to-r from-[#9C3FE4] to-[#C65647] active:bg-indigo-600 rounded-lg duration-150">
+                <button
+                  onClick={() => handleOpenModal("Email Verification")}
+                  className="w-full px-4 py-3  text-white font-medium bg-gradient-to-r from-[#9C3FE4] to-[#C65647] active:bg-indigo-600 rounded-lg duration-150"
+                >
                   Sign Up
                 </button>
               </form>
@@ -158,6 +173,8 @@ const SignUpMobile = () => {
           </div>
         </div>
       </div>
+
+      <Modal show={showModal} onClose={handleCloseModal} formType={formType} />
     </div>
   );
 };
