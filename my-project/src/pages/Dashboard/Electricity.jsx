@@ -9,7 +9,7 @@ const Electricity = () => {
       <Header />
       <p className="text-2xl font-bold pt-8">Electricity Subscription</p>
 
-      <div className="bg-gray-100 p-6 mt-8">
+      <div className="bg-gray-100 p-6 mt-8 lg:mb-0 mb-32">
         <p className="text-sm pb-6">Select Electricity Type</p>
         <div className="flex flex-wrap gap-12">
           <div className="bg-gradient-to-r from-[#9C3FE4] hover:cursor-pointer shadow-lg shadow-black to-[#C65647] p-12 rounded-lg">
@@ -140,7 +140,7 @@ const Electricity = () => {
           </div>
           <Link
             to="/PaymentSummaryElectricity"
-            className=" w-[30%] px-4 py-3  text-white font-medium bg-gradient-to-r from-[#9C3FE4] to-[#C65647] active:bg-indigo-600 rounded-lg duration-150"
+            className=" w-[30%] px-4 py-3 text-center  text-white font-medium bg-gradient-to-r from-[#9C3FE4] to-[#C65647] active:bg-indigo-600 rounded-lg duration-150"
           >
             Buy
           </Link>

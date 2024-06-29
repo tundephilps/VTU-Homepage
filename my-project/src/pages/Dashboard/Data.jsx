@@ -95,7 +95,7 @@ const Data = () => {
 
       <DataPlans />
 
-      <div className="w-full pt-8 block">
+      <div className="w-full pt-8 block lg:mb-12 mb-32">
         <Link
           to="/PaymentSummaryData"
           className="block text-center w-full px-4 py-3  text-white font-medium bg-gradient-to-r from-[#9C3FE4] to-[#C65647] active:bg-indigo-600 rounded-lg duration-150"

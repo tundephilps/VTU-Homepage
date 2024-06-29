@@ -1,6 +1,7 @@
 import { useRef, useState } from "react";
+import { Modal } from "./Modal";
 
-export default function PaymentConfirmationPin() {
+export default function BankConfirmationPin() {
   // OTP Fuctionalities
 
   const fieldsRef = useRef();
@@ -10,7 +11,9 @@ export default function PaymentConfirmationPin() {
     code3: "",
     code4: "",
   });
-
+  //Modal
+  const [showModal, setShowModal] = useState(false);
+  const [formType, setFormType] = useState("");
   // Switch to input fields method
   const inputFocus = (e) => {
     const elements = fieldsRef.current.children;
@@ -36,6 +39,15 @@ export default function PaymentConfirmationPin() {
   const handleChange = (e, codeNumber) => {
     const value = e.target.value;
     setState({ ...state, [codeNumber]: value.slice(value.length - 1) });
+  };
+
+  const handleOpenModal = (type) => {
+    setFormType(type);
+    setShowModal(true);
+  };
+
+  const handleCloseModal = () => {
+    setShowModal(false);
   };
 
   return (
@@ -85,9 +97,15 @@ export default function PaymentConfirmationPin() {
           onKeyUp={inputFocus}
         />
       </div>
-      <button className="w-full mt-8 px-6 py-2 bg-gradient-to-r from-[#9C3FE4] to-[#C65647] text-white rounded-lg">
-        Confirm
+
+      <button
+        onClick={() => handleOpenModal("Delivery Message")}
+        className="w-full mt-8 px-6 py-2 bg-gradient-to-r from-[#9C3FE4] to-[#C65647] text-white rounded-lg"
+      >
+        Confirm It
       </button>
+
+      <Modal show={showModal} onClose={handleCloseModal} formType={formType} />
     </div>
   );
 }

@@ -22,6 +22,9 @@ import PaymentSummaryAirtime from "./components/Dashboard/PaymentSummaryAirtime"
 import PaymentSummaryData from "./components/Dashboard/PaymentSummaryData";
 import PaymentSummaryElectricity from "./components/Dashboard/PaymentSummaryElectricity";
 import PaymentSummaryTVSub from "./components/Dashboard/PaymentSummaryTVSub";
+import WalletTransfer from "./pages/Dashboard/WalletTransfer";
+import PaymentSummaryBank from "./components/Dashboard/PaymentSummaryBank";
+import ReferralPerformance from "./pages/Dashboard/ReferralPerformance";
 
 function App() {
   return (
@@ -40,9 +43,13 @@ function App() {
           <Route path="electricity" element={<Electricity />} />
           <Route path="tvSubscription" element={<TVSubscription />} />
           <Route path="bankTransfer" element={<BankTransfer />} />
+
+          <Route path="WalletTransfer" element={<WalletTransfer />} />
           <Route path="targetSavings" element={<TargetSavings />} />
 
           <Route path="referrals" element={<Referrals />} />
+
+          <Route path="referralperformance" element={<ReferralPerformance />} />
           <Route path="transactions" element={<Transactions />} />
           <Route path="fundWallet" element={<FundWallet />} />
           <Route path="becomeAnAgent" element={<BecomeAnAgent />} />
@@ -58,6 +65,8 @@ function App() {
             element={<PaymentSummaryElectricity />}
           />
           <Route path="PaymentSummaryTVSub" element={<PaymentSummaryTVSub />} />
+
+          <Route path="PaymentSummaryBank" element={<PaymentSummaryBank />} />
         </Route>
       </Routes>
       {/* <div>

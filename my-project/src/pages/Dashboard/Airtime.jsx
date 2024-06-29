@@ -27,7 +27,7 @@ const Airtime = () => {
       <Header />
       <p className="text-2xl font-bold pt-8">Purchase Airtime</p>
 
-      <div className="bg-gray-100 p-6 mt-8">
+      <div className="bg-gray-100 p-6 mt-8 lg;mb-0 mb-36">
         <div className="lg:flex flex-col lg:flex-row  items-center justify-between w-full">
           <div>
             <label

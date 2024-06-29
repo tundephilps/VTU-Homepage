@@ -9,7 +9,7 @@ const TVSubscription = () => {
   return (
     <div className="p-2">
       <Header />
-      <p className="text-2xl font-bold pt-8 ">Purchase Airtime</p>
+      <p className="text-2xl font-bold pt-8 ">Cable Subscriptions</p>
 
       <div className="bg-gray-100 lg:p-6 p-2 mt-8">
         <p className="text-sm pb-8">Select Cable Name</p>
@@ -87,7 +87,7 @@ const TVSubscription = () => {
         <div className="w-full pt-8 block">
           <Link
             to="/PaymentSummaryTVSub"
-            className="block text-center w-full px-4 py-3  text-white font-medium bg-gradient-to-r from-[#9C3FE4] to-[#C65647] active:bg-indigo-600 rounded-lg duration-150"
+            className=" lg:mb-0 mb-32 block text-center w-full px-4 py-3  text-white font-medium bg-gradient-to-r from-[#9C3FE4] to-[#C65647] active:bg-indigo-600 rounded-lg duration-150"
           >
             Buy
           </Link>

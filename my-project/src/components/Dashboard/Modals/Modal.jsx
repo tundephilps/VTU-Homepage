@@ -7,6 +7,8 @@ import Logout from "./Logout";
 import PaymentSummary from "../PaymentSummaryAirtime";
 import PaymentConfirmationPin from "./PaymentConfirmationPin";
 import EmailVerification from "./EmailVerification";
+import BankConfirmationPin from "./BankConfirmationPin";
+import PaymentDeliveryMessage from "./PaymentDeliveryMessage";
 
 export const Modal = ({ show, onClose, formType }) => {
   if (!show) return null;
@@ -27,8 +29,14 @@ export const Modal = ({ show, onClose, formType }) => {
       case "Logout of Waradata":
         return <Logout onClose={onClose} />;
 
+      case "Bank Confirmation":
+        return <BankConfirmationPin onClose={onClose} />;
+
       case "Payment Confirmation":
         return <PaymentConfirmationPin />;
+
+      case "Delivery Message":
+        return <PaymentDeliveryMessage onClose={onClose} />;
       default:
         return null;
     }
