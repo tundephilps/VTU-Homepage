@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import Header from "../../components/Dashboard/Header";
 import card from "../../assets/card.png";
-import { FaWallet } from "react-icons/fa";
+import { FaEye, FaEyeSlash, FaWallet } from "react-icons/fa";
 import Data from "../../assets/Data.png";
 
 import Savings from "../../assets/Savings.png";
@@ -12,9 +12,16 @@ import Sub from "../../assets/Sub.png";
 import Electricity from "../../assets/Electricity.png";
 import Adverts from "../../components/Dashboard/Adverts";
 import ChartJsExample from "../../components/Dashboard/ChartsTable";
+import { Link } from "react-router-dom";
 //import ChartsTable from "../../components/Dashboard/ChartsTable";
 
 const Dashboard = () => {
+  const [isAmountVisible, setIsAmountVisible] = useState(false);
+
+  const toggleVisibility = () => {
+    setIsAmountVisible(!isAmountVisible);
+  };
+
   return (
     <div className="p-2 block overflow-x-hidden">
       <Header />
@@ -28,25 +35,42 @@ const Dashboard = () => {
             className="absolute inset-[0%]  inline-block h-[250px] lg:w-full"
             alt=""
           />
+          <button
+            onClick={toggleVisibility}
+            className="absolute bottom-[30%] right-[14%] cursor-pointer z-50"
+          >
+            {isAmountVisible ? (
+              <FaEye className="text-3xl text-white" />
+            ) : (
+              <FaEyeSlash className="text-3xl text-white" />
+            )}
+          </button>
+
           <div className="mx-auto relative flex flex-row justify-between p-6 w-full">
             <div>
               <p className="text-white lg:text-2xl text-lg pt-[120px] font-bold font-serif">
-                N1,800,000
+                {isAmountVisible ? "N1,800,000" : "*************"}
               </p>
             </div>
             <div className="flex flex-col gap-4">
-              <div className="bg-white px-3 py-1 w-[140px] rounded-md flex flex-row items-center gap-2">
+              <Link
+                to="/fundWallet"
+                className="bg-white px-3 py-1 w-[140px] rounded-md flex flex-row items-center gap-2"
+              >
                 <div className="bg-gradient-to-r from-pink-200 to-blue-200  rounded-full p-2 ">
                   <FaWallet className="text-white" />
                 </div>
                 <p className="text-xs">Fund Wallet</p>
-              </div>
-              <div className="bg-white px-3 py-1 w-[140px] rounded-md flex flex-row items-center gap-2">
+              </Link>
+              <Link
+                to="/transactions"
+                className="bg-white px-3 py-1 w-[140px] rounded-md flex flex-row items-center gap-2"
+              >
                 <div className="bg-gradient-to-r from-pink-200 to-blue-200  rounded-full p-2 ">
                   <FaWallet className="text-white" />
                 </div>
                 <p className="text-xs">Transaction</p>
-              </div>
+              </Link>
             </div>
           </div>
         </div>
@@ -56,46 +80,64 @@ const Dashboard = () => {
           <div className=" grid lg:grid-cols-2 gap-3">
             {/* First Grid */}
             <div className="space-y-2">
-              <div className="bg-white px-3 py-2 w-full rounded-md flex flex-row items-center gap-2">
+              <Link
+                to="/data"
+                className="bg-white px-3 py-2 w-full rounded-md flex flex-row items-center gap-2"
+              >
                 <div className="bg-gradient-to-r from-pink-200 to-blue-200  rounded-full p-2 ">
                   <img src={Data} className="h-5 w-5" />
                 </div>
                 <p className="text-xs">Purchase Data</p>
-              </div>
-              <div className="bg-white px-3 py-2 w-full  rounded-md flex flex-row items-center gap-2">
+              </Link>
+              <Link
+                to="/airtime"
+                className="bg-white px-3 py-2 w-full  rounded-md flex flex-row items-center gap-2"
+              >
                 <div className="bg-gradient-to-r from-pink-200 to-blue-200  rounded-full p-2 ">
                   <img src={airtime} className="h-5 w-5" />
                 </div>
                 <p className="text-xs">Purchase Airtime</p>
-              </div>
-              <div className="bg-white px-3 py-2 w-full  rounded-md flex flex-row items-center gap-2">
+              </Link>
+              <Link
+                to="/targetSavings"
+                className="bg-white px-3 py-2 w-full  rounded-md flex flex-row items-center gap-2"
+              >
                 <div className="bg-gradient-to-r from-pink-200 to-blue-200  rounded-full p-2 ">
                   <img src={Savings} className="h-5 w-5" />
                 </div>
                 <p className="text-xs">Target Saving</p>
-              </div>
+              </Link>
             </div>
 
             {/* Second Grid */}
             <div className="space-y-2">
-              <div className="bg-white px-3 py-2 w-full  rounded-md flex flex-row items-center gap-2">
+              <Link
+                to="/electricity"
+                className="bg-white px-3 py-2 w-full  rounded-md flex flex-row items-center gap-2"
+              >
                 <div className="bg-gradient-to-r from-pink-200 to-blue-200 rounded-full p-2">
                   <img src={Electricity} className="h-5 w-5" />
                 </div>
                 <p className="text-xs">Electricity Sub</p>
-              </div>
-              <div className="bg-white px-3 py-2 w-full  rounded-md flex flex-row items-center gap-2">
+              </Link>
+              <Link
+                to="/tvSubscription"
+                className="bg-white px-3 py-2 w-full  rounded-md flex flex-row items-center gap-2"
+              >
                 <div className="bg-gradient-to-r from-pink-200 to-blue-200  rounded-full p-2 ">
                   <img src={Sub} className="h-5 w-5" />
                 </div>
                 <p className="text-xs">TV Sub</p>
-              </div>
-              <div className="bg-white px-3 py-2 w-full  rounded-md flex flex-row items-center gap-2">
+              </Link>
+              <Link
+                to="/bankTransfer"
+                className="bg-white px-3 py-2 w-full  rounded-md flex flex-row items-center gap-2"
+              >
                 <div className="bg-gradient-to-r from-pink-200 to-blue-200  rounded-full p-2 ">
                   <img src={Bank} className="h-5 w-5" />
                 </div>
                 <p className="text-xs">Bank Transfer</p>
-              </div>
+              </Link>
             </div>
           </div>
         </div>

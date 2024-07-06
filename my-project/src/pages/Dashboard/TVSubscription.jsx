@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Header from "../../components/Dashboard/Header";
 import dstv from "../../assets/dstv.png";
 import { Link } from "react-router-dom";
@@ -6,6 +6,25 @@ import gotv from "../../assets/gotv.png";
 import startimes from "../../assets/startimes.png";
 
 const TVSubscription = () => {
+  const [selectedImage, setSelectedImage] = useState("gotv");
+
+  const cablePlans = {
+    startimes: [
+      { name: "Startimes Basic Monthly", price: "N1000" },
+      { name: "Startimes Classic Monthly", price: "N2000" },
+      { name: "Startimes Premium Monthly", price: "N3000" },
+    ],
+    dstv: [
+      { name: "Dstv Family Monthly", price: "N5000" },
+      { name: "Dstv Compact Monthly", price: "N10000" },
+      { name: "Dstv Premium Monthly", price: "N15000" },
+    ],
+    gotv: [
+      { name: "Gotv Smile Monthly", price: "N1000" },
+      { name: "Gotv Ginja Monthly", price: "N2000" },
+      { name: "Gotv Jolli Monthly", price: "N3000" },
+    ],
+  };
   return (
     <div className="p-2">
       <Header />
@@ -15,10 +34,30 @@ const TVSubscription = () => {
         <p className="text-sm pb-8">Select Cable Name</p>
 
         <div className="flex flex-wrap lg:gap-12 gap-6">
-          <img src={startimes} className="w-[183px] h-[119px]" />
-
-          <img src={dstv} className="w-[183px] h-[119px]" />
-          <img src={gotv} className="w-[183px] h-[119px]" />
+          <img
+            src={startimes}
+            className={`w-[183px] h-[119px] rounded-3xl cursor-pointer ${
+              selectedImage === "startimes" ? "shadow-lg shadow-black" : ""
+            }`}
+            onClick={() => setSelectedImage("startimes")}
+            alt="Startimes"
+          />
+          <img
+            src={dstv}
+            className={`w-[183px] h-[119px] rounded-3xl cursor-pointer ${
+              selectedImage === "dstv" ? "shadow-lg shadow-black" : ""
+            }`}
+            onClick={() => setSelectedImage("dstv")}
+            alt="Dstv"
+          />
+          <img
+            src={gotv}
+            className={`w-[183px] h-[119px]  rounded-3xl cursor-pointer ${
+              selectedImage === "gotv" ? "shadow-lg shadow-black" : ""
+            }`}
+            onClick={() => setSelectedImage("gotv")}
+            alt="Gotv"
+          />
         </div>
         <div className="pt-6">
           <label
@@ -39,49 +78,22 @@ const TVSubscription = () => {
 
         <div>
           <h1 className="pt-6">Select Cable Plan</h1>
-          <div className="flex flex-wrap gap-6">
-            <button
-              type="button"
-              className="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-lg text-sm h-24 lg:w-56 w-36  me-2 mb-2 dark:hover:bg-gray-700"
-            >
-              <p>Gotv Smile Monthly</p>
-              <p className="text-3xl text-black font-extrabold">N1000</p>
-            </button>
-            <button
-              type="button"
-              className="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-lg text-sm h-24 lg:w-56 w-36 me-2 mb-2 dark:hover:bg-gray-700"
-            >
-              <p>Gotv Ginja Monthly</p>
-              <p className="text-3xl text-black font-extrabold">N2000</p>
-            </button>
-            <button
-              type="button"
-              className="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-lg text-sm h-24 lg:w-56 w-36 me-2 mb-2 dark:hover:bg-gray-700"
-            >
-              <p>Gotv Ginja Monthly</p>
-              <p className="text-3xl text-black font-extrabold">N3000</p>
-            </button>{" "}
-            <button
-              type="button"
-              className="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-lg text-sm h-24 lg:w-56 w-36 me-2 mb-2 dark:hover:bg-gray-700"
-            >
-              <p>Gotv Ginja Monthly</p>
-              <p className="text-3xl text-black font-extrabold">N5000</p>
-            </button>{" "}
-            <button
-              type="button"
-              className="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-lg text-sm h-24 lg:w-56 w-36 me-2 mb-2 dark:hover:bg-gray-700"
-            >
-              <p>Gotv Ginja Monthly</p>
-              <p className="text-3xl text-black font-extrabold">N10000</p>
-            </button>
-            <button
-              type="button"
-              className="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-lg text-sm h-24 lg:w-56 w-36 me-2 mb-2 dark:hover:bg-gray-700"
-            >
-              <p>Gotv Ginja Monthly</p>
-              <p className="text-3xl text-black font-extrabold">N15000</p>
-            </button>
+          <div>
+            <h1 className="pt-6">Select Cable Plan</h1>
+            <div className="flex flex-wrap gap-6">
+              {cablePlans[selectedImage].map((plan, index) => (
+                <button
+                  key={index}
+                  type="button"
+                  className="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-lg text-sm h-24 lg:w-56 w-36 me-2 mb-2 dark:hover:bg-gray-700"
+                >
+                  <p>{plan.name}</p>
+                  <p className="text-3xl text-black font-extrabold">
+                    {plan.price}
+                  </p>
+                </button>
+              ))}
+            </div>
           </div>
         </div>
         <div className="w-full pt-8 block">

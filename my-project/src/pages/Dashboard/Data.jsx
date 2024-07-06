@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Header from "../../components/Dashboard/Header";
 import { FaPhone } from "react-icons/fa";
 import { RiArrowDropDownLine } from "react-icons/ri";
@@ -6,40 +6,105 @@ import DataPlans from "../../components/Dashboard/DataPlans";
 import { Link } from "react-router-dom";
 
 const Data = () => {
+  const [phoneNumber, setPhoneNumber] = useState("");
+
+  const mtnPrefixes = [
+    "0803",
+    "0806",
+    "0703",
+    "0903",
+    "0906",
+    "0813",
+    "0810",
+    "0814",
+    "0816",
+    "0913",
+    "0916",
+  ];
+  const gloPrefixes = ["0805", "0705", "0905", "0807", "0815", "0811", "0915"];
+  const airtelPrefixes = [
+    "0802",
+    "0902",
+    "0701",
+    "0808",
+    "0708",
+    "0812",
+    "0901",
+    "0907",
+  ];
+  const mobile9Prefixes = ["0809", "0909", "0817", "0818", "0908"];
+
+  const handleInputChange = (e) => {
+    setPhoneNumber(e.target.value);
+  };
+
+  const getProviderClass = (prefix) => {
+    if (mtnPrefixes.includes(prefix)) {
+      return "shadow-black active:shadow-lg";
+    } else if (gloPrefixes.includes(prefix)) {
+      return "shadow-black active:shadow-lg";
+    } else if (airtelPrefixes.includes(prefix)) {
+      return "shadow-black active:shadow-lg";
+    } else if (mobile9Prefixes.includes(prefix)) {
+      return "shadow-black active:shadow-lg";
+    } else {
+      return "";
+    }
+  };
+
+  const currentPrefix = phoneNumber.slice(0, 4);
+  const providerClass = getProviderClass(currentPrefix);
+
   return (
     <div className="p-2">
       <Header />
 
       <p className="text-2xl font-bold pt-8">Data Subscription</p>
       <p className="text-sm pt-8">Select Network</p>
-
+      {/* Cards */}
       <div className="pt-5 flex gap-6 flex-col lg:flex-row">
         <div
           href="#"
-          className="bg-[#F7BE02] active:shadow-lg active:shadow-black w-full lg:w-[25%] flex  p-6 items-center justify-center   border border-gray-200 rounded-lg  hover:bg-yellow-800 hover:cursor-pointer "
+          className={`bg-[#F7BE02] ${
+            mtnPrefixes.includes(currentPrefix)
+              ? "shadow-black shadow-lg bg-yellow-800"
+              : ""
+          } w-full lg:w-[25%] flex p-6 items-center justify-center border border-gray-200 rounded-lg hover:bg-yellow-800 hover:cursor-pointer`}
         >
           <h1 className="text-white text-3xl font-extrabold">MTN</h1>
         </div>
         <div
           href="#"
-          className="bg-[#E61A24] active:shadow-lg active:shadow-black w-full lg:w-[25%] flex  p-6 items-center justify-center   border border-gray-200 rounded-lg  hover:bg-red-800 hover:cursor-pointer "
+          className={`bg-[#E61A24] ${
+            airtelPrefixes.includes(currentPrefix)
+              ? "shadow-black shadow-lg bg-red-800"
+              : ""
+          } w-full lg:w-[25%] flex p-6 items-center justify-center border border-gray-200 rounded-lg hover:bg-red-800 hover:cursor-pointer`}
         >
           <h1 className="text-white text-3xl font-extrabold">AIRTEL</h1>
         </div>{" "}
         <div
           href="#"
-          className="bg-[#5EBC57] active:shadow-lg active:shadow-black w-full lg:w-[25%] flex  p-6 items-center justify-center   border border-gray-200 rounded-lg  hover:bg-green-800 hover:cursor-pointer "
+          className={`bg-[#5EBC57] ${
+            gloPrefixes.includes(currentPrefix)
+              ? "shadow-black shadow-lg bg-green-800"
+              : ""
+          } w-full lg:w-[25%] flex p-6 items-center justify-center border border-gray-200 rounded-lg hover:bg-green-800 hover:cursor-pointer`}
         >
           <h1 className="text-white text-3xl font-extrabold">GLO</h1>
         </div>
         <div
           href="#"
-          className=" bg-gradient-to-r from-[#005C42] to-[#D6E806] active:shadow-lg active:shadow-black w-full lg:w-[25%] flex  p-6 items-center justify-center hover:cursor-pointer  border border-gray-200 rounded-lg  hover:bg-[#1E7E52] "
+          className={`bg-gradient-to-r from-[#005C42] to-[#D6E806] ${
+            mobile9Prefixes.includes(currentPrefix)
+              ? "shadow-black shadow-lg bg-[#1E7E52]"
+              : ""
+          } w-full lg:w-[25%] flex p-6 items-center justify-center hover:cursor-pointer border border-gray-200 rounded-lg hover:bg-[#1E7E52]`}
         >
           <h1 className="text-white text-3xl font-extrabold">9MOBILE</h1>
         </div>
       </div>
-
+      {/* Phone Number Input */}
       <div className="pt-6">
         <label
           htmlFor="input-group-1"
@@ -55,10 +120,11 @@ const Data = () => {
             <FaPhone className="w-4 h-4 text-gray-500 dark:text-gray-400" />
           </div>
           <input
-            type="text"
-            id="input-group-1"
+            type="number"
             className="w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block ps-10 p-2.5  "
             placeholder="+234 000 0000 000"
+            value={phoneNumber}
+            onChange={handleInputChange}
           />
         </div>
       </div>

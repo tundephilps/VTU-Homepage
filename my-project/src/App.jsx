@@ -69,24 +69,6 @@ function App() {
           <Route path="PaymentSummaryBank" element={<PaymentSummaryBank />} />
         </Route>
       </Routes>
-      {/* <div>
-        <ul>
-          {sidebarData.map((item, index) => {
-            return (
-              <li key={index}>
-                <NavLink
-                  to={item.path}
-                  className={({ isActive }) =>
-                    ["nav-link", isActive ? "active" : null].join(" ")
-                  }
-                >
-                  <div>{item.icon}</div>
-                </NavLink>
-              </li>
-            );
-          })}
-        </ul>
-      </div> */}
     </>
   );
 }

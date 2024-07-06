@@ -12,14 +12,52 @@ import { Link } from "react-router-dom";
 const Airtime = () => {
   const [selectedItem, setSelectedItem] = useState("");
   const [showDropdown, setShowDropdown] = useState(false);
+  const [mobileNumber, setMobileNumber] = useState("");
+
+  const handleToggleDropdown = () => setShowDropdown(!showDropdown);
 
   const handleSelect = (item) => {
     setSelectedItem(item);
     setShowDropdown(false);
   };
 
-  const handleToggleDropdown = () => {
-    setShowDropdown(!showDropdown);
+  const handleInputChange = (e) => {
+    const value = e.target.value;
+    setMobileNumber(value);
+
+    const prefix = value.slice(0, 4);
+    if (
+      [
+        "0803",
+        "0806",
+        "0703",
+        "0903",
+        "0906",
+        "0706",
+        "0813",
+        "0810",
+        "0814",
+        "0816",
+        "0913",
+        "0916",
+      ].includes(prefix)
+    ) {
+      setSelectedItem("MTN");
+    } else if (
+      ["0805", "0705", "0905", "0807", "0815", "0811", "0915"].includes(prefix)
+    ) {
+      setSelectedItem("GLO");
+    } else if (
+      ["0802", "0902", "0701", "0808", "0708", "0812", "0901", "0907"].includes(
+        prefix
+      )
+    ) {
+      setSelectedItem("AIRTEL");
+    } else if (["0809", "0909", "0817", "0818", "0908"].includes(prefix)) {
+      setSelectedItem("9MOBILE");
+    } else {
+      setSelectedItem("");
+    }
   };
 
   return (
@@ -45,6 +83,8 @@ const Airtime = () => {
                 id="input-group-1"
                 className="w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block ps-10 p-2.5  "
                 placeholder="+234 000 0000 000"
+                value={mobileNumber}
+                onChange={handleInputChange}
               />
             </div>
           </div>
@@ -68,7 +108,7 @@ const Airtime = () => {
               </button>
             </div>
             {showDropdown && (
-              <div className="z-10 absolute bg-white divide-y divide-gray-100 rounded-lg shadow w-44 ">
+              <div className="z-10 absolute bg-white divide-y divide-gray-100 rounded-lg shadow w-44">
                 <ul
                   className="py-2 text-sm text-gray-700 dark:text-gray-200"
                   aria-labelledby="states-button"
@@ -80,7 +120,7 @@ const Airtime = () => {
                       onClick={() => handleSelect("MTN")}
                     >
                       <div className="inline-flex items-center">
-                        <img src={MTN} className="h-4 w-4 mr-2" />
+                        <img src={MTN} className="h-4 w-4 mr-2" alt="MTN" />
                         MTN
                       </div>
                     </button>
@@ -92,7 +132,7 @@ const Airtime = () => {
                       onClick={() => handleSelect("GLO")}
                     >
                       <div className="inline-flex items-center">
-                        <img src={GLO} className="h-4 w-4 mr-2" />
+                        <img src={GLO} className="h-4 w-4 mr-2" alt="GLO" />
                         GLO
                       </div>
                     </button>
@@ -104,7 +144,11 @@ const Airtime = () => {
                       onClick={() => handleSelect("AIRTEL")}
                     >
                       <div className="inline-flex items-center">
-                        <img src={AIRTEL} className="h-4 w-4 mr-2" />
+                        <img
+                          src={AIRTEL}
+                          className="h-4 w-4 mr-2"
+                          alt="AIRTEL"
+                        />
                         AIRTEL
                       </div>
                     </button>
@@ -116,7 +160,7 @@ const Airtime = () => {
                       onClick={() => handleSelect("9MOBILE")}
                     >
                       <div className="inline-flex items-center">
-                        <img src={ETI} className="h-4 w-4 mr-2" />
+                        <img src={ETI} className="h-4 w-4 mr-2" alt="9MOBILE" />
                         9MOBILE
                       </div>
                     </button>
@@ -181,7 +225,6 @@ const Airtime = () => {
             </span>
             <input
               type="text"
-              id="floating-phone-number"
               className="block py-1 ps-8 pe-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
               pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
               placeholder="Enter Amount"
